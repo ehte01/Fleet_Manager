@@ -1,0 +1,148 @@
+/* Theme Colors */
+:root {
+    --primary-color: #6B21A8; /* Dark Purple */
+    --secondary-color: #FB7185; /* Coral */
+    --background-color: #2A2A35; /* Dark Gray */
+    --text-color: #F9FAFB; /* Off-White */
+    --accent-color: #A855F7; /* Light Purple */
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Logo styling */
+.logo {
+    width: 200px; /* Increased logo size */
+    height: auto;
+}
+
+/* Custom gradient and shadow */
+.bg-gradient {
+    background: linear-gradient(135deg, var(--primary-color), #4C1D95);
+}
+
+.bg-gradient-secondary {
+    background: linear-gradient(135deg, #2C2A35, #3B3B5A);
+}
+
+.shadow-lg {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Card titles */
+.card-title {
+    font-size: 1.5rem; /* Increased title size */
+    font-weight: 600;
+}
+
+/* Styling for special conditions (faults and battery) */
+.table-warning {
+    color: #FFC107;
+}
+
+.table-danger {
+    color: #DC3545;
+}
+
+/* Adjustments for header and table */
+.table {
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.card {
+    border-radius: 0.75rem;
+}
+/* Section for flashing alerts */
+
+.flashing-red {
+    animation: flashRed 1s linear infinite; /* Adjust animation duration and timing as needed */
+  }
+  
+  @keyframes flashRed {
+    0% { background-color: #f00; } /* Red color */
+    50% { background-color: #222; } /* Back to original color */
+    100% { background-color: #f00; } /* Red color */
+  }
+  
+  
+  .flashing-cell {
+    animation: flashing 1s infinite alternate;
+  }
+  
+  @keyframes flashing {
+    0% { background-color: #f00; } /* Red color */
+    50% { background-color: #222; } /* Back to original color */
+    100% { background-color: #f00; } /* Red color */
+  }
+
+/* Ensuring the map image scales correctly */
+#staticMap {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Making sure the map area is responsive */
+.map-area, #mapContainer {
+    height: 50vh; /* Adjust as needed */
+}
+
+/* Adjusting table font size for smaller screens */
+@media (max-width: 768px) {
+    #myTable {
+        font-size: 12px; /* Smaller font for better readability */
+    }
+}
+
+
+/* Map space styling */
+.map-area {
+    height: 450px; /* Increased height for more visibility */
+    background-color: #3B3B5A; /* Darker background for the map area */
+    border-radius: 0.75rem;
+    position: relative; /* For absolute positioning of the image */
+    overflow: hidden; /* Ensures content stays within bounds */
+}
+
+#dateTimeDisplay {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    /* background-color: rgba(0, 0, 0, 0.8); Dark background to make it pop */
+    color: whitesmoke; /* Bright yellow text color */
+    padding: 8px 12px;
+    border-radius: 5px;
+    z-index: 1000;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* AMR photo styling inside map area */
+.amr-photo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%; /* Adjust size as necessary */
+    max-height: 90%; /* Adjust size as necessary */
+    border-radius: 0.5rem;
+    border: 2px solid var(--accent-color); /* Optional border */
+}
+
+@keyframes blink {
+    0% { background-color: whitesmoke; }
+    50% { background-color: transparent; }
+    100% { background-color: whitesmoke; }
+}
+
+/* .blinking-cell {
+    animation: blink 1s infinite;
+} */
+
+/* Default color for AMR ID column elements */
+.amr-id-cell {
+    background-color: gray;
+}

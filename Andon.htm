@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+    <title>AMR Monitoring Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header with Company Logo and Title -->
+    <header class="bg-gradient text-light py-3 shadow">
+        <div class="container d-flex align-items-center justify-content-between">
+            <img src="assets/logo.png" alt="Company Logo" class="logo me-3">
+            <h1 class="h3 mb-0 text-center flex-grow-1">AMR Monitoring Dashboard</h1>
+            <div id="dateTimeDisplay"></div>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <div class="container my-3 d-flex flex-column align-items-center">
+        <div class="row justify-content-center">
+            <!-- Map Space with AMR Photo -->
+            <div class="col-12 mb-4">
+                <div class="card bg-gradient-secondary text-light shadow-lg border-0">
+                    <div class="card-body text-center">
+                        <p class="card-text"></p>
+                        <div class="map-area">
+                            <!-- AMR Photo -->
+                            <div id="mapContainer">
+                                <div id="mapContent">
+                                    <img id="staticMap" src="assets/amrpath_ILCD.png" alt="Static Map">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AMR Status Table -->
+            <div class="col-12">
+                <div class="card bg-gradient-secondary text-light shadow-lg border-0">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="myTable">
+                            <table class="table table-dark table-hover text-center mt-3 rounded-3 overflow-hidden">
+                                <thead class="table-primary text-dark">
+                                    <tr>
+                                        <th scope="col">AMR ID</th>
+                                        <th scope="col">A Shift Cycles</th>
+                                        <th scope="col">B Shift Cycles</th>
+                                        <th scope="col">Current Location</th>
+                                        <th scope="col">Destination</th>
+                                        <th scope="col">Faults</th>
+                                        <th scope="col">Communication Status</th>
+                                        <th scope="col">Mode</th>
+                                        <th scope="col">Battery Status</th>
+                                        <th scope="col">AMR Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td id="amr1">AMR3</td>
+                                        <td id="amr03_trip">-</td>
+                                        <td id="amr03_shift">-</td>
+                                        <td id="amr03_location">-</td>
+                                        <td id="amr03_cycle">-</td>
+                                        <td id="amr03_faults">-</td>
+                                        <td id="amr03_comm">-</td>
+                                        <td id="amr03_mode">-</td>
+                                        <td id="amr03_soc">-</td>
+                                        <td id="amr03_status">-</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="amr2">AMR4</td>
+                                        <td id="amr04_trip">-</td>
+                                        <td id="amr04_shift">-</td>
+                                        <td id="amr04_location">-</td>
+                                        <td id="amr04_cycle">-</td>
+                                        <td id="amr04_faults">-</td>
+                                        <td id="amr04_comm">-</td>
+                                        <td id="amr04_mode">-</td>
+                                        <td id="amr04_soc">-</td>
+                                        <td id="amr04_status">-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio element for alert sound -->
+    <audio id="alertSound" src="assets/red.wav" preload="auto"></audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="script.js"></script> 
+</body>
+</html>
